@@ -707,6 +707,68 @@ a {
   margin-bottom: var(--s1)
 }
 
+/* Formulario */
+.form {
+  display: grid;
+  gap: var(--s3);
+  width: 100%;
+  max-width: 480px
+}
+
+.field {
+  display: grid;
+  gap: var(--s1)
+}
+
+.field label {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase
+}
+
+.field input,
+.field textarea {
+  font: 400 1rem var(--sans);
+  color: var(--ink);
+  background: var(--white);
+  border: 1.5px solid var(--brown);
+  border-radius: 16px;
+  padding: var(--s3);
+  min-height: 48px;
+  width: 100%;
+  transition: border-color .2s, box-shadow .2s
+}
+
+.field textarea {
+  resize: vertical
+}
+
+.field input:hover,
+.field textarea:hover {
+  border-color: var(--ink)
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px
+}
+
+.field input:user-invalid,
+.field textarea:user-invalid {
+  border-color: var(--rose-text)
+}
+
+.form .btn {
+  justify-self: start
+}
+
+.hp {
+  position: absolute;
+  left: -9999px
+}
+
 /* 768 */
 @media (min-width:768px) {
   .g3 {
@@ -714,9 +776,10 @@ a {
   }
 
   .contact {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr minmax(0, 480px);
     padding: var(--s6)
   }
+
 
   .hero-in {
     padding: var(--s6)
@@ -734,6 +797,12 @@ a {
   .credit {
     grid-column: 1/-1
   }
+}
+
+.contact-side {
+  display: grid;
+  gap: var(--s5);
+  width: 100%
 }
 
 /* 1024+ / 1280 */
